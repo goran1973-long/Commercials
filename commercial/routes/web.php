@@ -31,12 +31,14 @@ Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/cart', CartComponent::class)->name('shop.cart');
 
 Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
- require __DIR__.'/auth.php';
 
 
-Route::get('/dashboard', function () {
+
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');*/
+
+
 
     
    /* Route::middleware('auth')->group(function () {
@@ -45,3 +47,12 @@ Route::get('/dashboard', function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });*/
 
+Route::middleware(['auth'])->group(function() {
+    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+});
+
+Route::middleware(['auth', 'authadmin'])->group(function() {
+    Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+});
+
+require __DIR__.'/auth.php';
