@@ -10,7 +10,7 @@
                                     <h4 class="animated">Trade-in offer</h4>
                                     <h2 class="animated fw-900">Supper value deals</h2>
                                     <h1 class="animated fw-900 text-brand">On all products</h1>
-                                    <p class="animated">Save more with coupons & up to 70% off</p>
+                                     <p class="animated">Save more with coupons & up to 70% off</p>
                                     <a class="animated btn btn-brush btn-brush-3" href="product-details.html"> Shop Now </a>
                                 </div>
                             </div>
