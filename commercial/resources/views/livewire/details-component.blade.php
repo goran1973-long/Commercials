@@ -436,8 +436,8 @@
                                             <div class="product-cart-wrap small hover-up">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
-                                                        <a href="{{route(('product.details'),['slug'=>$product->slug]}}" tabindex="0">
-                                                            <img class="default-img" src="{{asset('assets/imgs/shop/product-')}} {{$rproduct->id}}-1.jpg" alt="{{$rproduct->name}}">
+                                                        <a href="{{route('product.details',['slug'=>$rproduct->slug])}}" tabindex="0">
+                                                            <img class="default-img" src="{{asset('assets/imgs/shop/product-')}}{{$rproduct->id}}-1.jpg" alt="{{$rproduct->name}}">
                                                             <img class="hover-img" src="{{asset('assets/imgs/shop/product-2-2.jpg') }}" alt="">
                                                         </a>
                                                     </div>
@@ -451,13 +451,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap">
-                                                    <h2><a href="{{route(('product.details'),['slug'=>$product->slug]}}" tabindex="0">{{$rproduct->name}}</a></h2>
+                                                    <h2><a href="{{route('product.details',['slug'=>$rproduct->slug])}}" tabindex="0">{{$rproduct->name}}</a></h2>
                                                     <div class="rating-result" title="90%">
                                                         <span>
                                                         </span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>{{regular_price}} </span>
+                                                        <span>{{$rproduct->regular_price}} </span>
                                                         <!-- <span class="old-price">$245.8</span> -->
                                                     </div>
                                                 </div>
@@ -533,42 +533,20 @@
                                 <h5 class="widget-title mb-10">New products</h5>
                                 <div class="bt-1 border-color-1"></div>
                             </div>
+                            @foreach($nproducts as $nproduct)
                             <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="#">
+                                <div class="image">                                          <!-- no space in Js object -->
+                                    <img src="{{asset('assets/imgs/shop/product-')}} {{$nproduct->id}}-1.jpg" alt="{{$nproduct->name}}">
                                 </div>
                                 <div class="content pt-10">
-                                    <h5><a href="product-details.html">Chen Cardigan</a></h5>
-                                    <p class="price mb-0 mt-5">$99.50</p>
+                                    <h5><a href="{{route('product.details',['slug'=>$nproduct->slug])}}">{{$nproduct->name}}</a></h5>
+                                    <p class="price mb-0 mt-5">{{$nproduct->regular_price}}</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width:90%"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="product-details.html">Chen Sweater</a></h6>
-                                    <p class="price mb-0 mt-5">$89.50</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="product-details.html">Colorful Jacket</a></h6>
-                                    <p class="price mb-0 mt-5">$25</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:60%"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>                        
                     </div>
                 </div>
