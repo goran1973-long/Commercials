@@ -11,14 +11,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        
+        //$this->app->bind('qty', function ($app) {
+    //return 1;
     }
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
+    
+     // Bootstrap any application services.
+     
+     public function boot(): void
     {
         //
     }
-}
+};
