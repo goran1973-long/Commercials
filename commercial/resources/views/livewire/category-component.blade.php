@@ -23,7 +23,7 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">{{$products->total()}}</strong> items for you!</p>
+                                <p> We found <strong class="text-brand">{{$products->total()}}</strong> items for you form <b>{{$category_name}}</b>!</p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
@@ -75,7 +75,7 @@
                                         <div class="product-img product-img-zoom">
                                             <a href="{{route('product.details', ['slug'=>$product->slug])}}">
                                                 <img class="default-img" src="{{ asset('assets/imgs/shop/product-')}}{{$product->id}}-1.jpg" alt="{{$product->name}}">
-                                                <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}} {{$product->id}}-2.jpg" alt="{{$product->name}}">
+                                                <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}}{{$product->id}}-2.jpg" alt="{{$product->name}}">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -240,3 +240,4 @@
         </section>
     </main>
 </div>
+
