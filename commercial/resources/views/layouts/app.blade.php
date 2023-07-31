@@ -59,7 +59,7 @@
                             </ul>
                             @else
                             <ul>                                
-                               <li><i class="fi-rs-key"></i><a href="{{ route('login') }}">Log In </a>  / <a href="{{ route('register')}}">Sign Up</a></li>
+                               <li><i class="fi-rs-key"></i><a href="{{ route('login') }}">Log In </a>  / <a href="{{route('register')}}">Sign Up</a></li>
                             </ul>
                             @endif
                         </div>
@@ -341,24 +341,24 @@
                                     <?php // odavde ... 18-ti minut! ?>
                                     <li><a href="blog.html">Blog </a></li>                                   
                                     <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                     @auth
-                                       @if(Auth::user()->utype == 'ADM')
+                                       <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                          @if(Auth::user()->utype == 'ADM')
                                             <ul class="sub-menu">
                                                 <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                                 <li><a href="#">Products</a></li>
-                                                <li><a href="#">Categories</a></li>
+                                                <li><a href="{{route('admin.categories')}}">Categories</a></li>
                                                 <li><a href="#">Coupons</a></li>
                                                 <li><a href="#">Orders</a></li>
                                                 <li><a href="#">Customers</a></li>
                                             </ul>
-                                        @else
+                                          @else
                                             <ul class="sub-menu">
                                                 <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
                                             </ul>
-                                        @endif
+                                          @endif
+                                       </li>
                                     @endif
-                                    </li>
                                 </ul>
                             </nav>
                         </div>
